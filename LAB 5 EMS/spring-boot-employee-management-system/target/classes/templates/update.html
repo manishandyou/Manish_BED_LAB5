@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta meta charset="ISO-8859-1">
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+	
+</head>
+<body>
+	
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		<!-- employement -->
+		<a class="employee-management" href="#">Employee Management System</a>
+		
+		<!-- Toggler/collapsibe Button -->
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"> </span>
+		</button>
+
+	</nav>
+	
+	<div class = "container" align="center">
+		<div align="center">
+			<h1>Update Employee</h1>
+			<br />	
+		</div>
+		
+		<div class="col-sm-4">
+			<form action="#" th:action="@{/updateEmployee}" th:object="${employee}"
+				method="post">
+
+				<div align="left">
+					<tr>
+						<label class="form-label">Employee First Name</label>
+						<td><input type="hidden" th:field="*{id}" /> <input
+							type="text" th:field="*{fname}" class="form-control"
+							placeholder="first name" /></td>
+					</tr>
+				</div>
+
+				<div align="left">
+					<tr>
+						<label class="form-label">Employee Last Name</label>
+						<td><input type="text" th:field="*{lname}"
+							class="form-control" placeholder="last name" /></td>
+					</tr>
+				</div>
+				
+				<div align="left">
+					<tr>
+						<label class="form-label">Employee Email</label>
+						<td><input type="text" th:field="*{email}" class="form-control"
+							placeholder="Email" /></td>
+					</tr>
+				</div>
+				
+				<br>
+				
+				<tr>
+					<td colspan="2"><button type="submit" class="btn btn-primary">Submit</button>
+					</td>
+				</tr>
+			</form>
+		</div>
+	
+	</div>
+</body>
+</html>
